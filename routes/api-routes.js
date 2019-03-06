@@ -7,6 +7,12 @@ module.exports = function(app){
         })
     });
 
+    app.get("/api/users", function(req, res){
+        db.User.findAll({}).then(function(dbUsers){
+            res.json(dbUsers)
+        })
+    })
+
     app.get("/api/songs/:id", function(req, res){
         var id = req.params.id
         db.Song.findOne({
@@ -23,6 +29,12 @@ module.exports = function(app){
             res.json(dbSongs)
         })
     });
+
+    app.post("/api/users", function(req, res){
+        db.User.create(req.body).then(function(dbUsers){
+            res.json(dbUsers)
+        })
+    })
 
     app.delete("/api/songs/:id", function(req, res){
         var id = req.params.id
