@@ -1,0 +1,64 @@
+
+/*=======================================
+Template Design By MarkUps	
+Author URI : http://www.markups.io/
+========================================*/
+
+#mu-video:after,
+#mu-hero:after {
+	background-color: #37b721;/* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #64b3f4, #37b721);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #64b3f4, #37b721); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+a:hover,
+a:focus,
+.mu-book-now-btn,
+.mu-copy-right a:hover,
+.mu-copy-right a:focus,
+.mu-send-msg-btn:hover,
+.mu-send-msg-btn:focus,
+.mu-logo,
+.mu-logo:hover,
+.mu-logo:focus,
+.mu-client-quote,
+.mu-clients-slider .slick-prev, 
+.mu-clients-slider .slick-next,
+.mu-clients-slider .slick-prev::before, 
+.mu-clients-slider .slick-next::before,
+.my-why-us-single-icon {
+	color: #37b721;
+}
+
+
+.scrollToTop,
+.mu-testimonial-slide .slick-dots li.slick-active,
+#mu-callto-action {
+	background-color: #37b721;
+}
+
+.mu-social-media a:hover,
+.mu-social-media a:focus {
+	border: 1px solid #37b721;
+	color: #37b721;
+}
+
+.mu-contact-form .form-control:focus,
+.mu-featured-tours-single-info .mu-book-now-btn {
+	border: 1px solid #37b721;    
+} 
+
+.mu-send-msg-btn,
+.mu-send-msg-btn:focus,
+.mu-register-btn:hover,
+.mu-register-btn:focus {
+	border: 1px solid #37b721;
+	background-color: #37b721;
+}
+
+.mu-clients-slider .slick-prev, 
+.mu-clients-slider .slick-next {
+	border: 2px solid #37b721;
+}
+
