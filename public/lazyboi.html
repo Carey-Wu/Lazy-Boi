@@ -182,8 +182,8 @@
 								<div class="d-flex justify-content-center h-100">
 									<!-- Search Bar -->
 									<div class="searchbar">
-										<input class="search_input" type="text" name="" placeholder="Search...">
-										<a href="#" class="search_icon"><i class="fa fa-search"></i></a>
+										<input class="search_input" id="query" type="text" name="" placeholder="Search...">
+										<a class="search_icon" id="search"><i class="fa fa-search"></i></a>
 									</div>
 								</div>
 							</div>
@@ -195,9 +195,9 @@
 									Select
 								</button>
 								<div class="dropdown-menu">
-									<button class="dropdown-item" type="button">Tracks</button>
-									<button class="dropdown-item" type="button">Artists</button>
-									<button class="dropdown-item" type="button">Albums</button>
+									<button class="dropdown-item" id="searchTrack" type="button">Tracks</button>
+									<button class="dropdown-item" id="searchArtist" type="button">Artists</button>
+									<button class="dropdown-item" id="searchAlbum" type="button">Albums</button>
 								</div>
 							</div>
 							<!-- End Search Music Content-->
@@ -385,7 +385,7 @@
 
 		<!-- Custom js -->
 		<script type="text/javascript" src="./js/custom.js"></script>
-
+    <script type="text/javascript" src="./js/napster.js"></script>
 </body>
 
 </html>
