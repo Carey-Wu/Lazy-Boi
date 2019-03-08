@@ -10,7 +10,7 @@ $(document).ready(function(){
 
         $.post("/api/users", newUser)
 
-        console.log("User Created" + newUser)
+        console.log("User Created" + JSON.stringify(newUser))
     })
 
   
