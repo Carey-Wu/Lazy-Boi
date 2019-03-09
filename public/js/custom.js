@@ -13,7 +13,10 @@
          }
          //go to destination
          $('html,body').animate({scrollTop:dest}, 1000,'swing');
-     });
+		 });
+		 
+		 /*Search Bar Function */
+		 document.querySelector('.searchbox [type="reset"]').addEventListener('click', function() {  this.parentNode.querySelector('input').focus();});
 	    
 
 	/*  2. Playlist Slick Slider */

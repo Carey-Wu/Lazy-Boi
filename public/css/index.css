@@ -3,7 +3,7 @@
 /*Parallax For Login Page */
 
 .parallax3 {
-	background-image: url("../images/fans.jpg");
+	background-image: url("./images/fans.jpg");
 	min-height: 600px; 
 	background-attachment: fixed;
 	background-position: center;
@@ -11,7 +11,7 @@
 	background-size: cover;
 	}
 	.parallax2 {
-		background-image: url("../images/fans.gif");
+		background-image: url("./images/fans.gif");
 		min-height: 5000px; 
 		background-attachment: fixed;
 		background-position: center;
@@ -19,7 +19,7 @@
 		background-size: cover;
 		}
 	.parallax4 {
-		background-image: url("../images/edm.gif");
+		background-image: url("./images/edm.gif");
 		min-height: 800px; 
 		background-attachment: fixed;
 		background-position: center;
@@ -55,7 +55,7 @@ a{color:inherit;text-decoration:none}
 	max-width:525px;
 	min-height:670px;
 	position:relative;
-	background:url("../images/login.gif") no-repeat center;
+	background:url("./images/login.gif") no-repeat center;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 10px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
