@@ -31,6 +31,7 @@ $(document).ready(function () {
         $.get(napsterQuery).then(function (result) {
             console.log(result.search.data)
             var trackResults = result.search.data.tracks
+            $("#trackResults").empty()
 
             for(var i=0; i < trackResults.length; i ++){
                 console.log(trackResults[i])
