@@ -21,6 +21,7 @@
   "dependencies": {
     "amplitudejs": "^4.1.0",
     "body-parser": "^1.18.3",
+    "email-validator": "^2.0.4",
     "express": "^4.16.4",
     "howler": "^2.1.1",
     "jquery": "^3.3.1",
@@ -29,6 +30,7 @@
     "path": "^0.12.7",
     "querystring": "^0.2.0",
     "request": "^2.88.0",
+    "require": "^2.4.20",
     "sequelize": "^4.42.1"
   }
 }
