@@ -8,7 +8,16 @@ $(document).ready(function(){
         ){
             console.log("Empty Fields")
             alert("Enter valid credentials")
-        } else {
+        } 
+        else if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.exec($("#newEmail").val().trim()) === null){
+            console.log("Invalid Email")
+            alert("Enter valid email")
+        }
+        else if ($("#newPass").val().trim() != $("#newPass2").val().trim()){
+            console.log("Password Match Fail")
+            alert("Passwords Do Not Match! Please Try Again.")
+        }
+        else {
             var newUser = {
                 username: $("#newUser").val().trim(),
                 password: $("#newPass").val().trim(),
@@ -21,6 +30,4 @@ $(document).ready(function(){
             window.location.href = "/home";
         }
     })
-
-  
 })
