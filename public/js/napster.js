@@ -3,9 +3,14 @@ $(document).ready(function () {
     var query = "";
     var apiKey = ""
     var napsterQuery = ""
+    var type = ""
+
+    $("#mu-music-results").hide()
+
     console.log("connected")
     $("#searchTrack").on("click", function (event) {
         event.preventDefault()
+
         query = $("#query").val();
         
 
@@ -17,12 +22,20 @@ $(document).ready(function () {
         }
         searchURL="http://api.napster.com/v2.2/search?";
         apiKey= "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
-        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=track";
+        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=track&per_type_limit=5";
         console.log(napsterQuery);
 
         $.get(napsterQuery).then(function (result) {
             console.log(result.search.data)
+            var trackResults = result.search.data.tracks
+
+            for(var i=0; i < trackResults.length; i ++){
+                console.log(trackResults[i])
+          
+            }
         })
+        $("#mu-music-results").show()
+
     })
     $("#searchArtist").on("click", function (event) {
         event.preventDefault()
