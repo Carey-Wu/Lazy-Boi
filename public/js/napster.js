@@ -38,6 +38,7 @@ $(document).ready(function () {
             $("#trackResults").empty()
 
             for(var i=0; i < trackResults.length; i ++){
+
                 console.log(trackResults[i])
 
                 var infoDiv = $("<div></div>")
@@ -68,7 +69,9 @@ $(document).ready(function () {
                 playButton.appendTo(cardBody)
                 addButton.appendTo(cardBody)
 
+
                 cardBody.appendTo(infoDiv)
+                
                 infoDiv.appendTo($("#trackResults"))
             }
         })
@@ -171,6 +174,10 @@ $(document).ready(function () {
     })
 
     $("#searchAlbum").on("click", function (event) {
+        $("#trackResults").hide()
+        $("#albumResults").hide()
+        $("#artistResults").hide()
+
         event.preventDefault()
         query = $("#query").val();
         
@@ -183,12 +190,95 @@ $(document).ready(function () {
         }
         searchURL="http://api.napster.com/v2.2/search?";
         apiKey= "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
-        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=album";
+        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=album&per_type_limit=5";
         console.log(napsterQuery);
 
         $.get(napsterQuery).then(function (result) {
             console.log(result.search.data)
+
+            var albumResults = result.search.data.albums
+            $("#albumResults").empty()
+
+            for(var i=0; i < albumResults.length; i ++){
+
+                console.log(albumResults[i])
+                var album_id = albumResults[i].id
+
+                var infoDiv = $("<div></div>")
+                infoDiv.attr("class", "card col-md-12")
+
+                var cardBody = $("<div></div>")
+                cardBody.attr("class", "card-body")
+
+                var albumTracks = $("<div></div>")
+                albumTracks.attr("class", "albumTracks")
+                albumTracks.attr("data-id", i)
+
+                var title = $("<h3></h3>")
+                title.attr("class", "card-title")
+
+                var artist = $("<h4></h4>")
+
+                title.text(albumResults[i].name)
+                artist.text("Artist: " + albumResults[i].artistName)
+
+                var img = $("<img></img>")
+                var imgSrc = "https://direct.napster.com/imageserver/v2/albums/" + album_id + "/images/300x300.png"
+                img.attr("src", imgSrc)
+                console.log("imgSrc: " + imgSrc)
+
+//=============================view tracks functionality========================================
+                var viewTracks = $("<button>See Tracks</button>")
+                viewTracks.attr("class", "btn btn-success viewTracks")
+
+                var tracksRef = albumResults[i].links.tracks.href + "?" + apiKey
+                viewTracks.attr("data-ref", tracksRef )
+                viewTracks.attr("id", i)
+
+
+//==============================================================================================
+                img.appendTo(cardBody)
+                title.appendTo(cardBody)
+                artist.appendTo(cardBody)
+
+                viewTracks.appendTo(cardBody)
+                albumTracks.appendTo(cardBody)
+
+                cardBody.appendTo(infoDiv)
+                
+                infoDiv.appendTo($("#albumResults"))
+            }
+            $(".viewTracks").on("click", function(event){
+                event.preventDefault()
+                console.log("view Tracks")
+    
+                var tracksRef = $(this).data("ref")
+                var id = $(this).data("id")
+                console.log("tracksRef: " + tracksRef)
+
+    
+                $.get(tracksRef).then(function(results){
+                    var trackResults = results.tracks
+                    var tracksDiv = $("#albumResults")
+
+                    for(var i =0; i< trackResults.length; i ++){
+                        console.log(trackResults[i].name)
+
+                        var albumTracks = $("<div></div>")
+                        var p = $("<p></p>")
+                        p.text(trackResults[i].name)
+                        p.appendTo(albumTracks)
+                       
+                        albumTracks.appendTo(tracksDiv)
+                    }
+                })
+    
+            })
         })
+
+        $("#mu-music-results").show()
+        $("#albumResults").show()
     })
-})
+
+})//document ready
 
