@@ -1,181 +1,276 @@
 <!DOCTYPE html>
-<html lang="eng-us">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Lazyboi</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
-    <!-- Local CSS -->
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Welcome to Lazyboi Media</title>
+    <!-- (Browser Icon)-->
+    <link rel="shortcut icon" type="image/icon" href="./images/logo.png" />
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/login.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <style>
-        img:hover {
-            animation: shake 0.5s;
-            animation-iteration-count: infinite;
-        }
 
-        @keyframes shake {
-            0% {
-                transform: translate(1px, 1px) rotate(0deg);
-            }
+    <link rel="stylesheet" href="./css/bootstrap.min 2.css">
+    <link rel="stylesheet" href="./css/fontAwesome.css">
+    <link rel="stylesheet" href="./css/hero-slider.css">
+    <link rel="stylesheet" href="./css/index.css">
 
-            10% {
-                transform: translate(-1px, -2px) rotate(-1deg);
-            }
 
-            20% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-            30% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
-
-            40% {
-                transform: translate(1px, -1px) rotate(1deg);
-            }
-
-            50% {
-                transform: translate(-1px, 2px) rotate(-1deg);
-            }
-
-            60% {
-                transform: translate(-3px, 1px) rotate(0deg);
-            }
-
-            70% {
-                transform: translate(3px, 1px) rotate(-1deg);
-            }
-
-            80% {
-                transform: translate(-1px, -1px) rotate(1deg);
-            }
-
-            90% {
-                transform: translate(1px, 2px) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(1px, -2px) rotate(-1deg);
-            }
-        }
-    </style>
-    <script src="./js/users.js"></script>
+    <script src="./js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
-
 <body>
-    </style>
 
-    <body>
+    <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#home"><span>Intro</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#services"><span>Welcome</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#our-story"><span>About Us</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Login / Sign Up</span></a></li>
+        </ul>
+    </div>
 
-        <div class="parallax2 text-center">
-            <div data-aos="zoom-in-down">
-                <img class="logo" src="./images/logo.png">
-            </div>
-            <div class="login-wrap">
-                <div class="login-html">
-                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
-                        class="tab">Sign In</label>
-                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign
-                        Up</label>
-                    <div class="login-form">
-                        <div class="sign-in-htm">
-                            <div class="group">
-                                <label for="user" class="label">Username</label>
-                                <input id="user" type="text" class="input">
-                            </div>
-                            <div class="group">
-                                <label for="pass" class="label">Password</label>
-                                <input id="pass" type="password" class="input" data-type="password">
-                            </div>
-                            <div class="group">
-                                <input id="check" type="checkbox" class="check" checked>
-                                <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                            </div>
-                            <div class="group">
-                                <button type="submit" class="button" id="signIn" value="Sign In" href="">Sign
-                                    In</button>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="foot-lnk">
-                                <a href="#forgot">Forgot Password?</a>
-                            </div>
-                        </div>
-                        <div class="sign-up-htm">
-                                <div class="group">
-                                    <label for="newUser" class="label">Username</label>
-                                    <input id="newUser" type="text" class="input">
-                                </div>
-                                <div class="group">
-                                    <label for="newPass" class="label">Password</label>
-                                    <input id="newPass" type="password" class="input" data-type="password">
-                                </div>
-                                <div class="group">
-                                    <label for="newPass2" class="label">Repeat Password</label>
-                                    <input id="newPass2" type="password" class="input" data-type="password">
-                                </div>
-                                <div class="group">
-                                    <label for="newEmail" class="label">Email Address</label>
-                                    <input id="newEmail" type="email" class="input" name="email">
-                                </div>
-                                <div class="group">
-                                    <input type="submit" class="button" id="signUp" value="Sign Up">
-                                </div>
-                            <div class="hr"></div>
-                            <div class="foot-lnk">
-                                <label for="tab-1">Already Member?</a>
+    <div class="parallax-content baner-content" id="home">
+        <div class="container">
+            <div class="first-content">
+                <h1>Lazy<em>boi</em></h1>
+                <span><em>Be Lazy. Be Proud.</em> Jam Out & Chill.</span>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scroll">
 
-                    </div>
-                </div>
-
-            </div>
-            <div class="parallax3 text-center">
-                <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-
-                    <img src="./images/headphones.png">
-                    <div class="musicintro">
-                        <h1>Do you enjoy music?</h1>
-
-                    </div>
+                <div class="primary-button">
+                    <a href="#services">Rock On</a>
                 </div>
             </div>
-            <div class="parallax2 text-center">
-                <div data-aos="fade-up" data-aos-duration="3000">
-                    <img src="./images/office.png">
-                    <div class="lazyintro">
-                        <h1 class="second">Do you consider yourself to be lazy?</h1>
-                    </div>
-
-                </div>
-                <div class="parallax4 text-center">
-
-                </div>
-
-
-            </div>
-
         </div>
-        <script>
-            AOS.init();
-        </script>
+    </div>
 
-    </body>
+    <!-- Lazyboi Services Content Start-->
+
+    <div class="service-content" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>Lazyboi Media</h4>
+                        <div class="line-dec"></div>
+
+                        <p>Are you lazy, just want to chill & listen to your favorite tracks? <em>Let us do the leg
+                                work!</em></p>
+                        <ul>
+                            <li>- Search our extensive library of music</li>
+                            <li>- Select the tracks that fit your vibe</li>
+                            <li>- Add tracks to personal playlists</li>
+                            <li>- Access your playlists anytime, lazyBoi</li>
+                        </ul>
+                        <div class="primary-button">
+                            <a href="#contact-us">Sign Up / Log In</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="service-item">
+
+                                <img class="logo" src="./images/logo.png">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Stream & Play</h4>
+                                <i class="fas fa-headphones" aria-hidden="true"></i>
+                                <div class="line-dec"></div>
+                                <p>Explore thousands of varities of soundtracks, artists, genres. What ever your lazy
+                                    heart desires.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Favorite Tracks</h4>
+                                <i class="fas fa-music" aria-hidden="true"></i>
+                                <div class="line-dec"></div>
+                                <p>Find & select your favorite tracks that you're vibing with the most.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Playlists</h4>
+                                <i class="fas fa-play-circle" aria-hidden="true"></i>
+                                <div class="line-dec"></div>
+                                <p>Add your songs to a personal playlist to be accessed anytime you want!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Lazy & Proud</h4>
+                                <i class="fas fa-smile" aria-hidden="true"></i>
+                                <div class="line-dec"></div>
+                                <p>Be You. Do You. Be Yourself. Enjoy your music, anytime & anywhere.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Story Section -->
+    <div class="tabs-content" id="our-story">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="wrapper">
+                        <section id="first-tab-group" class="tabgroup">
+                            <div id="tab1">
+                                <img src="./images/dreamteam3.gif" alt="">
+                                <p>The Dream Team @ work creating Lazyboi Media</p>
+                            </div>
+                            <div id="tab2">
+                                <img src="./images/rutgers.png" alt="">
+                                <img src="./images/bootcamp.png" alt="">
+                                <p>We're just a couple of cool dudes that are currently enrolled at Rutger's Coding
+                                    Bootcamp</p>
+                            </div>
+                        </section>
+                        <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                            <li><a href="#tab1" class="active">The Team</a></li>
+                            <li><a href="#tab2">Bootcamp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Log In / Sign Up Section -->
+    <div class="parallax-content login-content" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Log In / Sign Up Form -->
+                    <div class="text-center">
+                        <h1 class="logintxt">Join the Lazyboi Movement</h1>
+                    </div>
+                    <div class="login-wrap">
+                        <div class="login-html">
+                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                                class="tab">Sign In</label>
+                            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                                class="tab">Sign
+                                Up</label>
+                            <div class="login-form">
+                                <div class="sign-in-htm">
+                                    <div class="group">
+                                        <label for="user" class="label">Username</label>
+                                        <input id="user" type="text" class="input">
+                                    </div>
+                                    <div class="group">
+                                        <label for="pass" class="label">Password</label>
+                                        <input id="pass" type="password" class="input" data-type="password">
+                                    </div>
+                                    <div class="group">
+                                        <input id="check" type="checkbox" class="check" checked>
+                                        <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                                    </div>
+                                    <div class="group">
+                                        <button type="submit" class="button" id="signIn" value="Sign In" href="">Sign
+                                            In</button>
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="foot-lnk">
+                                        <a href="#forgot">Forgot Password?</a>
+                                    </div>
+                                </div>
+                                <div class="sign-up-htm">
+                                    <div class="group">
+                                        <label for="newUser" class="label">Username</label>
+                                        <input id="newUser" type="text" class="input">
+                                    </div>
+                                    <div class="group">
+                                        <label for="newPass" class="label">Password</label>
+                                        <input id="newPass" type="password" class="input" data-type="password">
+                                    </div>
+                                    <div class="group">
+                                        <label for="newPass2" class="label">Repeat Password</label>
+                                        <input id="newPass2" type="password" class="input" data-type="password">
+                                    </div>
+                                    <div class="group">
+                                        <label for="newEmail" class="label">Email Address</label>
+                                        <input id="newEmail" type="email" class="input" name="email">
+                                    </div>
+                                    <div class="group">
+                                        <input type="submit" class="button" id="signUp" value="Sign Up">
+                                    </div>
+                                    <div class="hr"></div>
+                                    <div class="foot-lnk">
+                                        <label for="tab-1">Already Member?</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scroll">
+                                <!-- Sign Up / Log In Form End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Start -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="primary-button">
+                        <a href="#home">Back To Top</a>
+                    </div>
+                    <p>Copyright &copy; 2019 Lazyboi Media
+                        - Github: <a rel="nofollow noopener" href="https://github.com/Carey-Wu/Project-2"><em>Project
+                                2</em></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="./js/vendor/bootstrap.min.js"></script>
+    <script src="./js/loginscreen.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $(".fixed-side-navbar a, .primary-button a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+
+</body>
 
 </html>
