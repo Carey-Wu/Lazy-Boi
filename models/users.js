@@ -23,6 +23,10 @@ module.exports = function (sequelize, DataTypes) {
                 isEmail: true
             }
         },
+        active: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        }
     });
     return User;
 };
