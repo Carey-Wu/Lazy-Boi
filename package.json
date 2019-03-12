@@ -20,6 +20,8 @@
   "homepage": "https://github.com/Carey-Wu/Project-2#readme",
   "dependencies": {
     "amplitudejs": "^4.1.0",
+    "async.js": "^0.9.5",
+    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "email-validator": "^2.0.4",
     "express": "^4.16.4",
@@ -31,6 +33,6 @@
     "querystring": "^0.2.0",
     "request": "^2.88.0",
     "require": "^2.4.20",
-    "sequelize": "^4.42.1"
+    "sequelize": "^4.43.0"
   }
 }
