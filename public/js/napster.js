@@ -47,6 +47,12 @@ $(document).ready(function () {
                 var cardBody = $("<div></div>")
                 cardBody.attr("class", "card-body")
 
+                var img = $("<img></img>")
+                var album_id = trackResults[i].links.albums.ids[0]
+                var imgSrc = "https://direct.napster.com/imageserver/v2/albums/" + album_id + "/images/200x200.jpg"
+                img.attr("src", imgSrc)
+                console.log("imgSrc: " + imgSrc)
+
                 var title = $("<h3></h3>")
                 title.attr("class", "card-title")
 
@@ -62,6 +68,7 @@ $(document).ready(function () {
                 playButton.attr("class", "btn btn-success")
                 addButton.attr("class", "btn btn-success")
 
+                img.appendTo(cardBody)
                 title.appendTo(cardBody)
                 artist.appendTo(cardBody)
                 album.appendTo(cardBody)
