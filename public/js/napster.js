@@ -251,28 +251,44 @@ $(document).ready(function () {
             $(".viewTracks").on("click", function(event){
                 event.preventDefault()
                 console.log("view Tracks")
+                $("#albumTracks").empty()
     
                 var tracksRef = $(this).data("ref")
                 var id = $(this).data("id")
                 console.log("tracksRef: " + tracksRef)
 
+                
+
     
                 $.get(tracksRef).then(function(results){
                     var trackResults = results.tracks
-                    var tracksDiv = $("#albumResults")
+                    var tracksDiv = $("#albumTracks")
+                    var album = $("<h2></h2>")
+                    var artist = $("<h4></h4>")
+                    var album_id = results.tracks[0].links.albums.ids[0]
+                    var imgSrc = "https://direct.napster.com/imageserver/v2/albums/" + album_id + "/images/300x300.png"
+
+                    $("#modalImg").attr("src", imgSrc)
+                    album.text(trackResults[0].albumName)
+                    artist.text("by " + trackResults[0].artistName)
+
+                    album.appendTo(tracksDiv)
+                    artist.appendTo(tracksDiv)
 
                     for(var i =0; i< trackResults.length; i ++){
                         console.log(trackResults[i].name)
 
                         var albumTracks = $("<div></div>")
+                
                         var p = $("<p></p>")
-                        p.text(trackResults[i].name)
+
+                        p.text((i+1) + ".) " + trackResults[i].name)
                         p.appendTo(albumTracks)
                        
                         albumTracks.appendTo(tracksDiv)
                     }
                 })
-    
+                $("#albumModal").modal("show")
             })
         })
 

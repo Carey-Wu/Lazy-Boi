@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     $("#signUp").on("click", function(event){
         event.preventDefault()
+        console.log("signUp button pressed")
         if($("#newUser").val().trim() === "" ||
         $("#newPass").val().trim() === "" ||
         $("#newEmail").val().trim() === ""
