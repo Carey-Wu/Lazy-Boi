@@ -36,6 +36,16 @@ module.exports = function(app){
         })
     })
 
+    app.put("/api/users", function(req, res){
+        db.User.update(
+            {active: req.body.active},
+            {where: {id: req.body.id}}
+        )
+        .then(function(dbUser){
+            res.json(dbUser)
+        })
+    })    
+
     app.delete("/api/songs/:id", function(req, res){
         var id = req.params.id
         db.Song.destroy({

@@ -6,14 +6,35 @@ $(document).ready(function () {
 
         $.get("/api/users", function (data) {
             for (var i = 0; i < data.length; i++) {
+                var activeUser = data[i]
+                console.log(activeUser);
                 if ($("#user").val().trim() === data[i].username && $("#pass").val().trim() === data[i].password) {
                     console.log("right");
-                    window.location.href = "/home";
+                    toggleActive()
                 }
                 else {
                     console.log("wrong");
                 }
+            
+                function toggleActive() {
+                    if (activeUser.active = true){
+                        updateActive(activeUser);
+                    }
+                    else {
+                        activeUser.active = !activeUser.active;
+                        updateActive(activeUser);    
+                    }
+                  }
+    
+                function updateActive(activeUser) {
+                    $.ajax({
+                      method: "PUT",
+                      url: "/api/users",
+                      data: activeUser
+                    }).then()//window.location.href = "/home");
+                  }
             }
+            
         })
     })
 })
