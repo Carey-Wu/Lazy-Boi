@@ -47,6 +47,12 @@ $(document).ready(function () {
                 var cardBody = $("<div></div>")
                 cardBody.attr("class", "card-body")
 
+                var img = $("<img></img>")
+                var album_id = trackResults[i].links.albums.ids[0]
+                var imgSrc = "https://direct.napster.com/imageserver/v2/albums/" + album_id + "/images/200x200.jpg"
+                img.attr("src", imgSrc)
+                console.log("imgSrc: " + imgSrc)
+
                 var title = $("<h3></h3>")
                 title.attr("class", "card-title")
 
@@ -62,6 +68,7 @@ $(document).ready(function () {
                 playButton.attr("class", "btn btn-success")
                 addButton.attr("class", "btn btn-success")
 
+                img.appendTo(cardBody)
                 title.appendTo(cardBody)
                 artist.appendTo(cardBody)
                 album.appendTo(cardBody)
@@ -251,28 +258,44 @@ $(document).ready(function () {
             $(".viewTracks").on("click", function(event){
                 event.preventDefault()
                 console.log("view Tracks")
+                $("#albumTracks").empty()
     
                 var tracksRef = $(this).data("ref")
                 var id = $(this).data("id")
                 console.log("tracksRef: " + tracksRef)
 
+                
+
     
                 $.get(tracksRef).then(function(results){
                     var trackResults = results.tracks
-                    var tracksDiv = $("#albumResults")
+                    var tracksDiv = $("#albumTracks")
+                    var album = $("<h2></h2>")
+                    var artist = $("<h4></h4>")
+                    var album_id = results.tracks[0].links.albums.ids[0]
+                    var imgSrc = "https://direct.napster.com/imageserver/v2/albums/" + album_id + "/images/300x300.png"
+
+                    $("#modalImg").attr("src", imgSrc)
+                    album.text(trackResults[0].albumName)
+                    artist.text("by " + trackResults[0].artistName)
+
+                    album.appendTo(tracksDiv)
+                    artist.appendTo(tracksDiv)
 
                     for(var i =0; i< trackResults.length; i ++){
                         console.log(trackResults[i].name)
 
                         var albumTracks = $("<div></div>")
+                
                         var p = $("<p></p>")
-                        p.text(trackResults[i].name)
+
+                        p.text((i+1) + ".) " + trackResults[i].name)
                         p.appendTo(albumTracks)
                        
                         albumTracks.appendTo(tracksDiv)
                     }
                 })
-    
+                $("#albumModal").modal("show")
             })
         })
 
