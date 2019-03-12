@@ -31,7 +31,7 @@ $(document).ready(function () {
                       method: "PUT",
                       url: "/api/users",
                       data: activeUser
-                    }).then()//window.location.href = "/home");
+                    }).then(window.location.href = "/home");
                   }
             }
             
