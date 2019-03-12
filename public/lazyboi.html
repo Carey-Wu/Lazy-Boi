@@ -195,6 +195,7 @@
 									  <form novalidate="novalidate" onsubmit="return false;" class="searchbox sbx-custom">
 										<div role="search" class="sbx-custom__wrapper">
 										  <input id="query" type="search" name="search" placeholder="Search Artist, Album, Track" autocomplete="off" required="required" class="sbx-custom__input">
+
 										  <button type="submit" title="Submit your search query." class="sbx-custom__submit">
 											<svg role="img" aria-label="Search">
 											  <use xlink:href="#sbx-icon-search-6"></use>
@@ -262,76 +263,17 @@
 							<div class="mu-music-results-content">
 								<div class="row">
 
-									<div class="col-md-4">
-										<div class="mu-music-results-single">
-											<img src="./images/artist1.jpg" alt="img">
-											<div class="mu-music-results-single-info">
-												<h3>Artist/Genre</h3>
-												<h4>Music info</h4>
-												<p>Artist info</p>
-												<a href="#" class="mu-play-add-btn">Add to Playlist</a>
-											</div>
-										</div>
+									<div class="col-md-12" id="trackResults">
+										
 									</div>
 
-									<div class="col-md-4">
-										<div class="mu-music-results-single">
-											<img src="./images/artist2.jpg" alt="img">
-											<div class="mu-music-results-single-info">
-												<h3>Artist/Genre</h3>
-												<h4>Music info</h4>
-												<p>Artist info</p>
-												<a href="#" class="mu-play-add-btn">Add to Playlist</a>
-											</div>
-										</div>
+									<div class="col-md-12" id = "albumResults">
+										
 									</div>
 
-									<div class="col-md-4">
-										<div class="mu-music-results-single">
-											<img src="./images/artist3.jpg" alt="img">
-											<div class="mu-music-results-single-info">
-												<h3>Artist/Genre</h3>
-												<h4>Music info</h4>
-												<p>Artist info</p>
-												<a href="#" class="mu-play-add-btn">Add to Playlist</a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="mu-music-results-single">
-											<img src="./images/artist4.jpg" alt="img">
-											<div class="mu-music-results-single-info">
-												<h3>Artist/Genre</h3>
-												<h4>Music info</h4>
-												<p>Artist info</p>
-												<a href="#" class="mu-play-add-btn">Add to Playlist</a>
-											</div>
-										</div>
+									<div class="col-md-12" id="artistResults" >
 									</div>
 
-									<div class="col-md-4">
-										<div class="mu-music-results-single">
-											<img src="./images/artist5.jpg" alt="img">
-											<div class="mu-music-results-single-info">
-												<h3>Artist/Genre</h3>
-												<h4>Music info</h4>
-												<p>Artist info</p>
-												<a href="#" class="mu-play-add-btn">Add to Playlist</a>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-4">
-										<div class="mu-music-results-single">
-											<img src="./images/artist6.jpg" alt="img">
-											<div class="mu-music-results-single-info">
-												<h3>Artist/Genre</h3>
-												<h4>Music info</h4>
-												<p>Artist info</p>
-												<a href="#" class="mu-play-add-btn">Add to Playlist</a>
-											</div>
-										</div>
-									</div>
 
 								</div>
 							</div>
@@ -428,7 +370,8 @@
 
 		<!-- Custom js -->
 		<script type="text/javascript" src="./js/custom.js"></script>
-    <script type="text/javascript" src="./js/napster.js"></script>
+	<script type="text/javascript" src="./js/napster.js"></script>
+
 </body>
 
 </html>
