@@ -24,6 +24,16 @@ module.exports = function(app){
         })
     });
 
+    app.put("/api/users/:id"), function(req, res){
+        db.User.update(
+            {active: true},
+            {where: {id: req.params.id}}
+        )
+        .then(function(dbUser){
+            res.json(dbUser)
+        })
+    }
+
     app.post("/api/songs", function(req, res){
         db.Song.create(req.body).then(function(dbSongs){
             res.json(dbSongs)
@@ -35,6 +45,16 @@ module.exports = function(app){
             res.json(dbUsers)
         })
     })
+
+    app.put("/api/users", function(req, res){
+        db.User.update(
+            {active: req.body.active},
+            {where: {id: req.body.id}}
+        )
+        .then(function(dbUser){
+            res.json(dbUser)
+        })
+    })    
 
     app.delete("/api/songs/:id", function(req, res){
         var id = req.params.id
