@@ -65,8 +65,12 @@ $(document).ready(function () {
 
                 var playButton = $("<button>Play Song!</button>")
                 var addButton = $("<button>Add to Playlist!</button>")
-                playButton.attr("class", "btn btn-success")
                 addButton.attr("class", "btn btn-success")
+
+                playButton.attr("class", "btn btn-success playBtn")
+                var ytRef = (trackResults[i].name + " by " + trackResults[i].artistName)
+                playButton.attr("data-ref", ytRef)
+
 
                 img.appendTo(cardBody)
                 title.appendTo(cardBody)
@@ -81,11 +85,20 @@ $(document).ready(function () {
                 
                 infoDiv.appendTo($("#trackResults"))
             }
+            $(".playBtn").on("click", function(event){
+                event.preventDefault()
+                var ytRef = $(this).data("ref")
+                console.log("playButton")
+                console.log(ytRef)
+                ytSearch(ytRef)
+            })
         })
+        
         $("#mu-music-results").show()
         $("#trackResults").show()
 
     })
+
 
     $("#searchArtist").on("click", function (event) {
         $("#trackResults").hide()
@@ -157,7 +170,10 @@ $(document).ready(function () {
 
                 var playButton = $("<button>Play Song!</button>")
                 var addButton = $("<button>Add to Playlist!</button>")
-                playButton.attr("class", "btn btn-success")
+                var ytRef = (tracks[i].name + " by " + tracks[i].artistName)
+
+                playButton.attr("class", "btn btn-success playBtn")
+                playButton.attr("data-ref", ytRef)
                 addButton.attr("class", "btn btn-success")
 
                 title.appendTo(trackBody)
@@ -170,6 +186,13 @@ $(document).ready(function () {
                 trackDiv.appendTo($("#artistResults"))
 
                 }
+                $(".playBtn").on("click", function(event){
+                    event.preventDefault()
+                    var ytRef = $(this).data("ref")
+                    console.log("playButton")
+                    console.log(ytRef)
+                    ytSearch(ytRef)
+                })
             })
 
 //=============================tracks card end=====================================================
@@ -302,6 +325,36 @@ $(document).ready(function () {
         $("#mu-music-results").show()
         $("#albumResults").show()
     })
+
+function ytSearch(query){
+    var userSearch = query
+    var root = "https://www.youtube.com/embed/"
+
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search", {
+            part: "snippet",
+            q: userSearch,
+            type: "video",
+            videoEmbeddable: true,
+            key: "AIzaSyCfYX18CUnQSumetnfx59uPgQN3400sTG8"
+        }, 
+            function(data){
+                $("#youtubeResults").empty()
+                for (var i = 0; i < 1; i++) {
+                    var video = data.items[i];
+                    var videoId = video.id.videoId;
+                    var url = root + videoId;
+                    console.log(url, "-------------------------")
+                    $("#youtubeResults").append(`<iframe width="400" height="315" src=${url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+
+                }
+             }
+    )
+    console.log(userSearch)
+    $("#youtubeModal").modal("show")
+}
+
+
 
 })//document ready
 
