@@ -3,6 +3,9 @@ html {
 	overflow-x:hidden;
 }
 
+.btn-success{
+	margin: 10px
+}
 ul {
 	padding: 0;
 	margin: 0;
@@ -1325,4 +1328,5 @@ button {
 	
 	
 }
+
 

@@ -309,14 +309,30 @@ $(document).ready(function () {
                         console.log(trackResults[i].name)
 
                         var albumTracks = $("<div></div>")
+                        var playButton = $("<button>Play Song!</button>")
+                        var addButton = $("<button>Add to Playlist!</button>")
+                        var ytRef = (trackResults[i].name + " by " + trackResults[i].artistName)
+        
+                        playButton.attr("class", "btn btn-success playBtn")
+                        playButton.attr("data-ref", ytRef)
+                        addButton.attr("class", "btn btn-success")
                 
                         var p = $("<p></p>")
 
                         p.text((i+1) + ".) " + trackResults[i].name)
                         p.appendTo(albumTracks)
+                        playButton.appendTo(albumTracks)
+                        addButton.appendTo(albumTracks)
                        
                         albumTracks.appendTo(tracksDiv)
                     }
+                    $(".playBtn").on("click", function(event){
+                        event.preventDefault()
+                        var ytRef = $(this).data("ref")
+                        console.log("playButton")
+                        console.log(ytRef)
+                        ytSearch(ytRef)
+                    })
                 })
                 $("#albumModal").modal("show")
             })
@@ -352,6 +368,7 @@ function ytSearch(query){
     )
     console.log(userSearch)
     $("#youtubeModal").modal("show")
+    $("#albumModal").modal("hide")
 }
 
 
