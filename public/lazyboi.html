@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +13,8 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<!-- AOS CSS -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<!-- Slick Slider -->
 	<link href="./css/slick.css" rel="stylesheet">
 	<!-- Theme Color -->
@@ -47,10 +48,13 @@
 					<!-- Start Logo Area -->
 					<div class="mu-logo-area">
 						<!-- Text Logo Content -->
-						<a class="mu-logo" href="lazyboi.html"><span>LazyBoi</span></a>
+						<div data-aos="fade-up" data-aos-duration="3000">
+							<a class="mu-logo" href="lazyboi.html"><span>LazyBoi</span></a>
+						</div>
 					</div>
 					<!-- End Logo Content -->
 					<div class="mu-hero-top-info">
+
 						<ul>
 							<li>
 								<i class="fa fa-search" aria-hidden="true"></i>
@@ -69,27 +73,193 @@
 
 				<!-- Start Lazyboi Feature Header -->
 				<div class="text-center">
-					<img class="logo" src="./images/logo.png">
-					<div class="mu-hero-featured-area">
-						<div class="mu-hero-featured-content">
-							<h2>Welcome to Lazyboi </h2>
-							<h1>Search Artists / Stream Music / Save Playlists</h1>
-							<p>Be Lazy, Be Proud, Jam Out & Chill</p>
+					<div class="text-center">
+						<div data-aos="fade-up" data-aos-duration="3000">
+							<img class="logo" src="./images/logo.png">
+							<div class="mu-hero-featured-area">
+								<div class="mu-hero-featured-content">
+									<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+										<h2>Welcome to Lazyboi </h2>
+										<h1>Search Artists / Stream Music / Save Playlists</h1>
+										<p>Be Lazy, Be Proud, Jam Out & Chill</p>
 
-							<a href="#mu-video" class="mu-play-add-btn">Search Now!</a>
+										<a href="#mu-video" class="mu-play-add-btn">Search Now!</a>
 
-							<div class="mu-scrolldown-area">
-								<a href="#mu-about" class="mu-scrolldown" id="mu-scrolldown"><i class="fa fa-chevron-down"
-										aria-hidden="true"></i></a>
+										<div class="mu-scrolldown-area">
+											<a href="#mu-about" class="mu-scrolldown" id="mu-scrolldown"><i
+													class="fa fa-chevron-down" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
 							</div>
+							<!-- End Featured Area -->
+
 						</div>
 					</div>
-					<!-- End Featured Area -->
-
-				</div>
-			</div>
 	</header>
 	<!-- End Header -->
+	<!-- Start Search Music Content -->
+	<section id="mu-video">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mu-video-area">
+						<div data-aos="flip-up">
+							<h2>Lazyboi Music Search</h2>
+							<p class="mu-title-content">Insert & search your favorite tracks by artist, song, genre</p>
+							<div class="container h-100">
+								<div class="d-flex justify-content-center h-100">
+									<!-- Search Bar -->
+									<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+										<symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-search-6"
+											viewBox="0 0 40 40">
+											<path
+												d="M28.295 32.517c-2.93 2.086-6.51 3.312-10.38 3.312C8.02 35.83 0 27.81 0 17.914 0 8.02 8.02 0 17.915 0 27.81 0 35.83 8.02 35.83 17.915c0 3.87-1.227 7.45-3.313 10.38l6.61 6.61c1.166 1.165 1.163 3.057 0 4.22-1.167 1.167-3.057 1.167-4.226-.002l-6.605-6.606zm-10.38.326c8.245 0 14.928-6.683 14.928-14.928 0-8.245-6.683-14.93-14.928-14.93-8.245 0-14.93 6.685-14.93 14.93 0 8.245 6.685 14.928 14.93 14.928zm0-26.573c-6.43 0-11.645 5.214-11.645 11.645 0 .494.4.895.896.895.495 0 .896-.4.896-.895 0-5.442 4.41-9.853 9.853-9.853.494 0 .895-.4.895-.896 0-.495-.4-.896-.895-.896z"
+												fill-rule="evenodd" />
+										</symbol>
+										<symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-clear-5"
+											viewBox="0 0 20 20">
+											<path
+												d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10zm1.35-10.123l3.567 3.568-1.225 1.226-3.57-3.568-3.567 3.57-1.226-1.227 3.568-3.568-3.57-3.57 1.227-1.224 3.568 3.568 3.57-3.567 1.224 1.225-3.568 3.57zM10 18.272c4.568 0 8.272-3.704 8.272-8.272S14.568 1.728 10 1.728 1.728 5.432 1.728 10 5.432 18.272 10 18.272z"
+												fill-rule="evenodd" />
+										</symbol>
+									</svg>
+
+									<form novalidate="novalidate" onsubmit="return false;" class="searchbox sbx-custom">
+										<div role="search" class="sbx-custom__wrapper">
+											<input id="query" type="search" name="search"
+												placeholder="Search Artist, Album, Track" autocomplete="off"
+												required="required" class="sbx-custom__input">
+											<button type="submit" title="Submit your search query."
+												class="sbx-custom__submit">
+												<svg role="img" aria-label="Search">
+													<use xlink:href="#sbx-icon-search-6"></use>
+												</svg>
+											</button>
+											<button type="reset" title="Clear the search query."
+												class="sbx-custom__reset">
+												<svg role="img" aria-label="Reset">
+													<use xlink:href="#sbx-icon-clear-5"></use>
+												</svg>
+											</button>
+										</div>
+									</form>
+
+								</div>
+								<!-- End Search Bar -->
+
+								<!-- Button Options -->
+								<!-- First Button -->
+
+								<div class="svg-wrapper">
+									<svg height="40" width="150">
+										<rect id="shape" height="40" width="150" />
+										<div class="text" id="searchTrack">
+											<button><span class="spot"></span>Tracks Search</button>
+										</div>
+									</svg>
+								</div>
+
+								<!-- Second Button -->
+								<div class="svg-wrapper">
+									<svg height="40" width="150">
+										<rect id="shape" height="40" width="150">
+											<div class="text" id="searchArtist">
+												<button><span class="spot"></span>Artists Search</button>
+											</div>
+									</svg>
+								</div>
+								<!-- Third Button -->
+								<div class="svg-wrapper">
+									<svg height="40" width="150">
+										<rect id="shape" height="40" width="150">
+											<div class="text" id="searchAlbum">
+												<button><span class="spot"></span>Albums Search</button>
+											</div>
+									</svg>
+								</div>
+							</div>
+							<!--End Button Options -->
+
+
+							<!-- End Search Music Content-->
+						</div>
+					</div>
+				</div>
+	</section>
+
+	<!-- Start Music Results Area-->
+	<section id="mu-music-results">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mu-music-results-area">
+
+						<h2>Music Results</h2>
+						<p class="mu-title-content">Awesome taste in music, here's what we found...</p>
+						<div id="albumModal" class="modal fade" role="dialog">
+							<div class="modal-dialog">
+
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Album Tracks</h4>
+									</div>
+									<div class="modal-body">
+										<img id="modalImg" width="450" src="">
+										<div id="albumTracks"></div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div id="youtubeModal" class="modal fade" role=dialog>
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">YouTube Results</h4>
+									</div>
+									<div class="modal-body">
+										<div id="youtubeResults"></div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Start Music Results Content -->
+						<div class="mu-music-results-content">
+							<div class="row">
+								<div class="col-md-12" id="trackResults">
+
+								</div>
+								<div class="col-md-12" id="albumResults">
+
+								</div>
+								<div class="col-md-12" id="artistResults">
+								</div>
+
+							</div>
+						</div>
+						<!-- End Music Results Content -->
+
+					</div>
+				</div>
+				<!-- End Music Results Content -->
+			</div>
+		</div>
+		</div>
+		</div>
+	</section>
 
 
 	<!-- Start Main Content -->
@@ -104,24 +274,32 @@
 							<div class="row">
 								<div class="col-md-6">
 									<div class="mu-about-left">
-										<img class="" src="./images/lazyboi2.png" alt="img">
+										<div data-aos="zoom-in">
+											<img class="" src="./images/lazyboi2.png" alt="img">
+										</div>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="mu-about-right">
-										<h2>Lazyboi Media</h2>
-										<p>We're just a bunch of night time coders @ Rutger's Coding Bootcamp</p>
-										<p>We've created an app to conveniently stream your favorite tracks & artists. Crank that volume up,
-											enjoy your personal playlists, get comfy in that chair, put your feet up,
-											no cares given.</p>
+										<div data-aos="flip-up">
+
+											<h2>Lazyboi Media</h2>
+											<p>We're just a bunch of night time coders @ Rutger's Coding Bootcamp</p>
+											<p>We've created an app to conveniently stream your favorite tracks &
+												artists. Crank that volume up,
+												enjoy your personal playlists, get comfy in that chair, put your feet
+												up,
+												no cares given.</p>
+										</div>
 									</div>
 								</div>
 							</div>
-							<!-- End Feature Content -->
-
 						</div>
+						<!-- End Feature Content -->
+
 					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 		<!-- End About Lazyboi -->
@@ -141,7 +319,8 @@
 												<i class="fa fa-search" aria-hidden="true"></i>
 											</div>
 											<h3>Search Music</h3>
-											<p>Type in your favorite artists, genre, or tracks and search our extensive library of music</p>
+											<p>Type in your favorite artists, genre, or tracks and search our extensive
+												library of music</p>
 										</div>
 									</div>
 									<div class="col-md-4">
@@ -150,7 +329,8 @@
 												<i class="fa fa-headphones" aria-hidden="true"></i>
 											</div>
 											<h3>Stream & Play</h3>
-											<p>Enjoy and stream any tracks you'd like and save your favorites into a personal playlist.</p>
+											<p>Enjoy and stream any tracks you'd like and save your favorites into a
+												personal playlist.</p>
 										</div>
 									</div>
 									<div class="col-md-4">
@@ -171,160 +351,10 @@
 		</section>
 		<!-- End How To -->
 
-		<!-- Start Search Music Content -->
-		<section id="mu-video">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="mu-video-area">
-							<h2>Lazyboi Music Search</h2>
-							<p class="mu-title-content">Insert & search your favorite tracks by artist, song, genre</p>
-							<div class="container h-100">
-								<div class="d-flex justify-content-center h-100">
-									<!-- Search Bar -->
-									<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-										<symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-search-6" viewBox="0 0 40 40">
-											<path
-												d="M28.295 32.517c-2.93 2.086-6.51 3.312-10.38 3.312C8.02 35.83 0 27.81 0 17.914 0 8.02 8.02 0 17.915 0 27.81 0 35.83 8.02 35.83 17.915c0 3.87-1.227 7.45-3.313 10.38l6.61 6.61c1.166 1.165 1.163 3.057 0 4.22-1.167 1.167-3.057 1.167-4.226-.002l-6.605-6.606zm-10.38.326c8.245 0 14.928-6.683 14.928-14.928 0-8.245-6.683-14.93-14.928-14.93-8.245 0-14.93 6.685-14.93 14.93 0 8.245 6.685 14.928 14.93 14.928zm0-26.573c-6.43 0-11.645 5.214-11.645 11.645 0 .494.4.895.896.895.495 0 .896-.4.896-.895 0-5.442 4.41-9.853 9.853-9.853.494 0 .895-.4.895-.896 0-.495-.4-.896-.895-.896z"
-												fill-rule="evenodd" />
-										</symbol>
-										<symbol xmlns="http://www.w3.org/2000/svg" id="sbx-icon-clear-5" viewBox="0 0 20 20">
-											<path
-												d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10zm1.35-10.123l3.567 3.568-1.225 1.226-3.57-3.568-3.567 3.57-1.226-1.227 3.568-3.568-3.57-3.57 1.227-1.224 3.568 3.568 3.57-3.567 1.224 1.225-3.568 3.57zM10 18.272c4.568 0 8.272-3.704 8.272-8.272S14.568 1.728 10 1.728 1.728 5.432 1.728 10 5.432 18.272 10 18.272z"
-												fill-rule="evenodd" />
-										</symbol>
-									</svg>
 
-									<form novalidate="novalidate" onsubmit="return false;" class="searchbox sbx-custom">
-										<div role="search" class="sbx-custom__wrapper">
-											<input id= "query" type="search" name="search" placeholder="Search Artist, Album, Track" autocomplete="off"
-												required="required" class="sbx-custom__input">
-											<button type="submit" title="Submit your search query." class="sbx-custom__submit">
-												<svg role="img" aria-label="Search">
-													<use xlink:href="#sbx-icon-search-6"></use>
-												</svg>
-											</button>
-											<button type="reset" title="Clear the search query." class="sbx-custom__reset">
-												<svg role="img" aria-label="Reset">
-													<use xlink:href="#sbx-icon-clear-5"></use>
-												</svg>
-											</button>
-										</div>
-									</form>
-
-									<!-- End Search Bar -->
-
-									<!-- Button Options -->
-									<!-- First Button -->
-
-									<div class="svg-wrapper">
-										<svg height="40" width="150">
-											<rect id="shape" height="40" width="150" />
-											<div class="text" id="searchTrack">
-												<button><span class="spot"></span>Tracks Search</button>
-											</div>
-										</svg>
-									</div>
-
-									<!-- Second Button -->
-									<div class="svg-wrapper">
-										<svg height="40" width="150">
-											<rect id="shape" height="40" width="150">
-												<div class="text" id="searchArtist">
-													<button><span class="spot"></span>Artists Search</button>
-												</div>
-										</svg>
-									</div>
-									<!-- Third Button -->
-									<div class="svg-wrapper">
-										<svg height="40" width="150">
-											<rect id="shape" height="40" width="150">
-												<div class="text" id="searchAlbum">
-													<button><span class="spot"></span>Albums Search</button>
-												</div>
-										</svg>
-									</div>
-									<!--End Button Options -->
-
-
-									<!-- End Search Music Content-->
-								</div>
-							</div>
-						</div>
-		</section>
-
-		<!-- Start Music Results Area-->
-		<section id="mu-music-results">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="mu-music-results-area">
-							<h2>Music Results</h2>
-							<p class="mu-title-content">Awesome taste in music, here's what we found...</p>
-							<div id="albumModal" class="modal fade" role="dialog">
-								<div class="modal-dialog">
-
-									<div class="modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">Album Tracks</h4>
-										</div>
-										<div class="modal-body">
-											<img id="modalImg" width="450" src="">
-											<div id="albumTracks"></div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-							<div id = "youtubeModal" class="modal fade" role=dialog>
-								<div class="modal-dialog">
-									<div class = "modal-content">
-										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title">YouTube Results</h4>
-										</div>
-										<div class="modal-body">
-												<div id="youtubeResults"></div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										</div>
-									</div>
-								</div>
-							</div>
-
-									<!-- Start Music Results Content -->
-									<div class="mu-music-results-content">
-										<div class="row">
-											<div class="col-md-12" id="trackResults">
-									
-											</div>
-											<div class="col-md-12" id="albumResults">
-
-											</div>
-											<div class="col-md-12" id="artistResults">
-											</div>
-
-										</div>
-									</div>
-									<!-- End Music Results Content -->
-
-								</div>
-							</div>
-							<!-- End Music Results Content -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 		<!-- End Music Results Area -->
 
-		<!-- Start Playlists Content -->
+		<!-- Start Playlists Content
 		<section id="mu-playlists">
 			<div class="container">
 				<div class="row">
@@ -376,7 +406,8 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="mu-footer-left">
-								<p class="mu-copy-right">&copy; Copyright <a rel="nofollow" href="index.html">Lazyboi Media</a></p>
+								<p class="mu-copy-right">&copy; Copyright <a rel="nofollow" href="index.html">Lazyboi
+										Media</a></p>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -396,6 +427,7 @@
 		</footer>
 		<!-- End Footer -->
 
+
 		<!-- jQuery/ Popper.js / Bootstrap JS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
@@ -406,11 +438,17 @@
 			crossorigin="anonymous"></script>
 		<!-- Slick slider -->
 		<script type="text/javascript" src="./js/slick.min.js"></script>
+		<!-- AOS.js for animations -->
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 		<!-- Custom js -->
 		<script type="text/javascript" src="./js/custom.js"></script>
 		<script type="text/javascript" src="./js/napster.js"></script>
 		<script type="text/javascript" src="./js/songs.js"></script>
+		<!-- Initialize AOS JS Animations-->
+		<script>
+			AOS.init();
+		</script>
 </body>
 
 </html>
