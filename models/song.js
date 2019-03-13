@@ -21,35 +21,35 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
-        },
-        genre: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        track_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        album_art_url: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate:{
-                len: [1]
-            }
-        },
-        playlist: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate:{
-                len: [1]
-            }
-        },
+         }
+    //     genre: {
+    //         type: DataTypes.STRING,
+    //         allowNull: false,
+    //         validate: {
+    //             len: [1]
+    //         }
+    //     },
+    //     track_id: {
+    //         type: DataTypes.STRING,
+    //         allowNull: false,
+    //         validate: {
+    //             len: [1]
+    //         }
+    //     },
+    //     album_art_url: {
+    //         type: DataTypes.STRING,
+    //         allowNull: false,
+    //         validate:{
+    //             len: [1]
+    //         }
+    //     },
+    //     playlist: {
+    //         type: DataTypes.STRING,
+    //         allowNull: false,
+    //         validate:{
+    //             len: [1]
+    //         }
+    //     },
 
         
     });

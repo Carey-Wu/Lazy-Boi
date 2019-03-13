@@ -65,7 +65,10 @@ $(document).ready(function () {
 
                 var playButton = $("<button>Play Song!</button>")
                 var addButton = $("<button>Add to Playlist!</button>")
-                addButton.attr("class", "btn btn-success")
+                addButton.attr("class", "btn btn-success addBtn")
+                addButton.attr("track", trackResults[i].name)
+                addButton.attr("artist", trackResults[i].artistName)
+                addButton.attr("album", trackResults[i].albumName)
 
                 playButton.attr("class", "btn btn-success playBtn")
                 var ytRef = (trackResults[i].name + " by " + trackResults[i].artistName)
