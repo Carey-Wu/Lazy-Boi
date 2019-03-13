@@ -22,7 +22,8 @@ $(document).ready(function(){
             var newUser = {
                 username: $("#newUser").val().trim(),
                 password: $("#newPass").val().trim(),
-                email: $("#newEmail").val().trim()
+                email: $("#newEmail").val().trim(),
+                active: true
             }
 
             $.post("/api/users", newUser)
