@@ -29,7 +29,8 @@ $(document).ready(function(){
             $.post("/api/users", newUser)
 
             console.log("User Created" + JSON.stringify(newUser))
-            window.location.href = "/home";
+            $("#tab-1").click();
+            alert("New User Created. Please Login")        
         }
     })
 })
