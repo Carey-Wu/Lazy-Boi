@@ -6,12 +6,30 @@ $(document).ready(function(){
     var albumArt = $("#album_url")
     var songUrl = $("#song_url")
 
-    $(document).on("click", "#addSong", addSong);
+    $(document).on("click", ".addBtn", function(event){
+      event.preventDefault();
+      var name=$(this).attr("track")
+      var artist=$(this).attr("artist")
+      var album=$(this).attr("album")
+      console.log(name)
+      console.log(artist)
+      console.log(album)
+      var song = {
+        artist: artist,
+        name: name,
+        album: album
+        // songUrl: songUrl
+      };
+  
+        $.post("/api/songs", song)
+    });
+
+
     $(document).on("click", ".deleteSong", deleteSong);
 
     var songs = []
 
-    getSongs()
+    // getSongs()
 
     function initializeRows() {
         $playlist.empty();
