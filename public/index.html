@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-
+    	<!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Local Stylesheets -->
     <link rel="stylesheet" href="./css/bootstrap.min 2.css">
     <link rel="stylesheet" href="./css/fontAwesome.css">
     <link rel="stylesheet" href="./css/hero-slider.css">
@@ -38,12 +40,15 @@
     <div class="parallax-content baner-content" id="home">
         <div class="container">
             <div class="first-content">
+                    <div data-aos="fade-up"
+                    data-aos-duration="3000">
                 <h1>Lazy<em>boi</em></h1>
                 <span><em>Be Lazy. Be Proud.</em> Jam Out & Chill.</span>
 
 
                 <div class="primary-button">
                     <a href="#services">Rock On</a>
+                </div>
                 </div>
             </div>
         </div>
@@ -56,6 +61,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="left-text">
+                            <div data-aos="fade-up"
+                            data-aos-duration="3000">
                         <h4>Lazyboi Media</h4>
                         <div class="line-dec"></div>
 
@@ -70,48 +77,60 @@
                         <div class="primary-button">
                             <a href="#contact-us">Sign Up / Log In</a>
                         </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="service-item">
+                                    <div data-aos="fade-down"
+                                    data-aos-easing="linear"
+                                    data-aos-duration="1500">
 
                                 <img class="logo" src="./images/logo.png">
-
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
+                                <div data-aos="zoom-in-up">
                             <div class="service-item">
                                 <h4>Stream & Play</h4>
                                 <i class="fas fa-headphones" aria-hidden="true"></i>
                                 <div class="line-dec"></div>
                                 <p>Explore thousands of varities of soundtracks, artists, genres. What ever your lazy
                                     heart desires.</p>
+                                    </div>
                             </div>
                         </div>
                         <div class="col-md-6">
+                                <div data-aos="zoom-in-left">
                             <div class="service-item">
                                 <h4>Favorite Tracks</h4>
                                 <i class="fas fa-music" aria-hidden="true"></i>
                                 <div class="line-dec"></div>
                                 <p>Find & select your favorite tracks that you're vibing with the most.</p>
                             </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
+                                <div data-aos="zoom-in-up">
                             <div class="service-item">
                                 <h4>Playlists</h4>
                                 <i class="fas fa-play-circle" aria-hidden="true"></i>
                                 <div class="line-dec"></div>
                                 <p>Add your songs to a personal playlist to be accessed anytime you want!</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
+                                <div data-aos="zoom-in-left">
                             <div class="service-item">
                                 <h4>Lazy & Proud</h4>
                                 <i class="fas fa-smile" aria-hidden="true"></i>
                                 <div class="line-dec"></div>
                                 <p>Be You. Do You. Be Yourself. Enjoy your music, anytime & anywhere.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,8 +146,12 @@
                     <div class="wrapper">
                         <section id="first-tab-group" class="tabgroup">
                             <div id="tab1">
+                                    <div data-aos="fade-down"
+                                    data-aos-easing="linear"
+                                    data-aos-duration="1500">
                                 <img src="./images/dreamteam3.gif" alt="">
                                 <p>The Dream Team @ work creating Lazyboi Media</p>
+                                </div>
                             </div>
                             <div id="tab2">
                                 <img src="./images/rutgers.png" alt="">
@@ -154,8 +177,13 @@
                 <div class="col-md-12">
                     <!-- Log In / Sign Up Form -->
                     <div class="text-center">
+                            <div data-aos="fade-down"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500">
                         <h1 class="logintxt">Join the Lazyboi Movement</h1>
+                        </div>
                     </div>
+                    <div data-aos="flip-up">
                     <div class="login-wrap">
                         <div class="login-html">
                             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
@@ -217,6 +245,7 @@
                                 <!-- Sign Up / Log In Form End -->
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -246,8 +275,12 @@
     <script src="./js/users.js"></script>
     <script src="./js/vendor/bootstrap.min.js"></script>
     <script src="./js/loginscreen.js"></script>
+    	<!-- AOS.js for animations -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         $(document).ready(function () {
+            // Initilaze AOS Animations
+            AOS.init();
             // Add smooth scrolling to all links
             $(".fixed-side-navbar a, .primary-button a").on('click', function (event) {
 
