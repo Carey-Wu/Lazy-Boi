@@ -2,7 +2,7 @@ var db = require("../models")
 
 module.exports = function(app){
     app.get("/api/songs", function(req, res){
-        db.Song.findAll({}).then(function(dbSongs){
+        db.Songs.findAll({}).then(function(dbSongs){
             res.json(dbSongs)
         })
     });
@@ -13,29 +13,8 @@ module.exports = function(app){
         })
     })
 
-    app.get("/api/songs/:id", function(req, res){
-        var id = req.params.id
-        db.Song.findOne({
-            where: {
-                id: id
-            }
-        }).then(function(dbSong){
-            res.json(dbSong)
-        })
-    });
-
-    app.put("/api/users/:id"), function(req, res){
-        db.User.update(
-            {active: true},
-            {where: {id: req.params.id}}
-        )
-        .then(function(dbUser){
-            res.json(dbUser)
-        })
-    }
-
     app.post("/api/songs", function(req, res){
-        db.Song.create(req.body).then(function(dbSongs){
+        db.Songs.create(req.body).then(function(dbSongs){
             res.json(dbSongs)
         })
     });
@@ -55,10 +34,31 @@ module.exports = function(app){
             res.json(dbUser)
         })
     })    
+    
+    app.get("/api/songs/:id", function(req, res){
+        var id = req.params.id
+        db.Songs.findOne({
+            where: {
+                id: id
+            }
+        }).then(function(dbSongs){
+            res.json(dbSongs)
+        })
+    });
+
+    // app.put("/api/users/:id"), function(req, res){
+    //     db.User.update(
+    //         {active: true},
+    //         {where: {id: req.params.id}}
+    //     )
+    //     .then(function(dbUser){
+    //         res.json(dbUser)
+    //     })
+    // }
 
     app.delete("/api/songs/:id", function(req, res){
         var id = req.params.id
-        db.Song.destroy({
+        db.Songs.destroy({
             where:{
                 id:id
             }
