@@ -28,5 +28,13 @@ module.exports = function (sequelize, DataTypes) {
             defaultValue: false
         }
     });
+
+    User.associate = function(models) {
+        // Associating User with Songs
+        // When a User is deleted, also delete any associated Songs
+        User.hasMany(models.Songs, {
+            onDelete: "cascade"
+        });
+    };
     return User;
 };

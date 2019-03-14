@@ -22,6 +22,8 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
          }
+
+
     //     genre: {
     //         type: DataTypes.STRING,
     //         allowNull: false,
@@ -53,5 +55,16 @@ module.exports = function (sequelize, DataTypes) {
 
         
     });
+
+    Songs.associate = function(models) {
+        // We're saying that a Songs should belong to a User
+        // Songs can't be created without a User due to the foreign key constraint
+        Songs.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      };
+
     return Songs;
 };

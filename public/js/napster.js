@@ -19,7 +19,7 @@ $(document).ready(function () {
         event.preventDefault()
 
         query = $("#query").val();
-        
+
 
         if (query.includes(" ")) {
             query = query.split(" ").join("+");
@@ -27,9 +27,9 @@ $(document).ready(function () {
         } else {
             console.log("no-space");
         }
-        searchURL="http://api.napster.com/v2.2/search?";
-        apiKey= "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
-        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=track&per_type_limit=5";
+        searchURL = "http://api.napster.com/v2.2/search?";
+        apiKey = "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
+        napsterQuery = searchURL + apiKey + "&query=" + query + "&type=track&per_type_limit=5";
         console.log(napsterQuery);
 
         $.get(napsterQuery).then(function (result) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
             var trackResults = result.search.data.tracks
             $("#trackResults").empty()
 
-            for(var i=0; i < trackResults.length; i ++){
+            for (var i = 0; i < trackResults.length; i++) {
 
                 console.log(trackResults[i])
 
@@ -85,10 +85,10 @@ $(document).ready(function () {
 
 
                 cardBody.appendTo(infoDiv)
-                
+
                 infoDiv.appendTo($("#trackResults"))
             }
-            $(".playBtn").on("click", function(event){
+            $(".playBtn").on("click", function (event) {
                 event.preventDefault()
                 var ytRef = $(this).data("ref")
                 console.log("playButton")
@@ -96,7 +96,7 @@ $(document).ready(function () {
                 ytSearch(ytRef)
             })
         })
-        
+
         $("#mu-music-results").show()
         $("#trackResults").show()
 
@@ -112,7 +112,7 @@ $(document).ready(function () {
 
         event.preventDefault()
         query = $("#query").val();
-        
+
 
         if (query.includes(" ")) {
             query = query.split(" ").join("+");
@@ -120,9 +120,9 @@ $(document).ready(function () {
         } else {
             console.log("no-space");
         }
-        searchURL="http://api.napster.com/v2.2/search?";
-        apiKey= "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
-        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=artist&per_type_limit=1";
+        searchURL = "http://api.napster.com/v2.2/search?";
+        apiKey = "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
+        napsterQuery = searchURL + apiKey + "&query=" + query + "&type=artist&per_type_limit=1";
         console.log(napsterQuery);
 
         $.get(napsterQuery).then(function (result) {
@@ -130,7 +130,7 @@ $(document).ready(function () {
             var artistResult = result.search.data.artists[0]
             var artist_id = artistResult.id
 
-//-------------------------------title card-------------------------------------------------
+            //-------------------------------title card-------------------------------------------------
             var infoDiv = $("<div></div>")
             infoDiv.attr("class", "card col-md-12")
 
@@ -149,47 +149,50 @@ $(document).ready(function () {
             title.appendTo(cardBody)
             img.appendTo(cardBody)
             cardBody.appendTo(infoDiv)
-//==================================title card end//tracks card start=================================
-            var tracksQuery = artistResult.links.topTracks.href + "?"+ apiKey + "&limit=5"
+            //==================================title card end//tracks card start=================================
+            var tracksQuery = artistResult.links.topTracks.href + "?" + apiKey + "&limit=5"
             console.log("tracksQuery: " + tracksQuery)
 
-            $.get(tracksQuery).then(function(results){
+            $.get(tracksQuery).then(function (results) {
                 var tracks = results.tracks
 
-                for(var i = 0; i <tracks.length; i++){
-                var trackDiv = $("<div></div>")
-                trackDiv.attr("class", "card col-md-12")
+                for (var i = 0; i < tracks.length; i++) {
+                    var trackDiv = $("<div></div>")
+                    trackDiv.attr("class", "card col-md-12")
 
-                var trackBody = $("<div></div>")
-                trackBody.attr("class", "card-body")
+                    var trackBody = $("<div></div>")
+                    trackBody.attr("class", "card-body")
 
-                var title = $("<h3></h3>")
-                title.attr("class", "card-title")
+                    var title = $("<h3></h3>")
+                    title.attr("class", "card-title")
 
-                var album = $("<h4></h4>")
+                    var album = $("<h4></h4>")
 
-                title.text(tracks[i].name)
-                album.text("Album: " + tracks[i].albumName)
+                    title.text(tracks[i].name)
+                    album.text("Album: " + tracks[i].albumName)
 
-                var playButton = $("<button>Play Song!</button>")
-                var addButton = $("<button>Add to Playlist!</button>")
-                var ytRef = (tracks[i].name + " by " + tracks[i].artistName)
+                    var playButton = $("<button>Play Song!</button>")
+                    var addButton = $("<button>Add to Playlist!</button>")
+                    var ytRef = (tracks[i].name + " by " + tracks[i].artistName)
 
-                playButton.attr("class", "btn btn-success playBtn")
-                playButton.attr("data-ref", ytRef)
-                addButton.attr("class", "btn btn-success addBtn")
+                    playButton.attr("class", "btn btn-success playBtn")
+                    playButton.attr("data-ref", ytRef)
+                    addButton.attr("class", "btn btn-success addBtn")
+                    addButton.attr("track", tracks[i].name)
+                    addButton.attr("artist", tracks[i].artistName)
+                    addButton.attr("album", tracks[i].albumName)
 
-                title.appendTo(trackBody)
-                album.appendTo(trackBody)
+                    title.appendTo(trackBody)
+                    album.appendTo(trackBody)
 
-                playButton.appendTo(trackBody)
-                addButton.appendTo(trackBody)
+                    playButton.appendTo(trackBody)
+                    addButton.appendTo(trackBody)
 
-                trackBody.appendTo(trackDiv)
-                trackDiv.appendTo($("#artistResults"))
+                    trackBody.appendTo(trackDiv)
+                    trackDiv.appendTo($("#artistResults"))
 
                 }
-                $(".playBtn").on("click", function(event){
+                $(".playBtn").on("click", function (event) {
                     event.preventDefault()
                     var ytRef = $(this).data("ref")
                     console.log("playButton")
@@ -198,9 +201,9 @@ $(document).ready(function () {
                 })
             })
 
-//=============================tracks card end=====================================================
+            //=============================tracks card end=====================================================
             infoDiv.appendTo($("#artistResults"))
-            
+
         })
         $("#mu-music-results").show()
         $("#artistResults").show()
@@ -213,7 +216,7 @@ $(document).ready(function () {
 
         event.preventDefault()
         query = $("#query").val();
-        
+
 
         if (query.includes(" ")) {
             query = query.split(" ").join("+");
@@ -221,9 +224,9 @@ $(document).ready(function () {
         } else {
             console.log("no-space");
         }
-        searchURL="http://api.napster.com/v2.2/search?";
-        apiKey= "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
-        napsterQuery=searchURL + apiKey + "&query=" + query + "&type=album&per_type_limit=5";
+        searchURL = "http://api.napster.com/v2.2/search?";
+        apiKey = "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
+        napsterQuery = searchURL + apiKey + "&query=" + query + "&type=album&per_type_limit=5";
         console.log(napsterQuery);
 
         $.get(napsterQuery).then(function (result) {
@@ -232,7 +235,7 @@ $(document).ready(function () {
             var albumResults = result.search.data.albums
             $("#albumResults").empty()
 
-            for(var i=0; i < albumResults.length; i ++){
+            for (var i = 0; i < albumResults.length; i++) {
 
                 console.log(albumResults[i])
                 var album_id = albumResults[i].id
@@ -260,16 +263,16 @@ $(document).ready(function () {
                 img.attr("src", imgSrc)
                 console.log("imgSrc: " + imgSrc)
 
-//=============================view tracks functionality========================================
+                //=============================view tracks functionality========================================
                 var viewTracks = $("<button>See Tracks</button>")
                 viewTracks.attr("class", "btn btn-success viewTracks")
 
                 var tracksRef = albumResults[i].links.tracks.href + "?" + apiKey
-                viewTracks.attr("data-ref", tracksRef )
+                viewTracks.attr("data-ref", tracksRef)
                 viewTracks.attr("id", i)
 
 
-//==============================================================================================
+                //==============================================================================================
                 img.appendTo(cardBody)
                 title.appendTo(cardBody)
                 artist.appendTo(cardBody)
@@ -278,22 +281,22 @@ $(document).ready(function () {
                 albumTracks.appendTo(cardBody)
 
                 cardBody.appendTo(infoDiv)
-                
+
                 infoDiv.appendTo($("#albumResults"))
             }
-            $(".viewTracks").on("click", function(event){
+            $(".viewTracks").on("click", function (event) {
                 event.preventDefault()
                 console.log("view Tracks")
                 $("#albumTracks").empty()
-    
+
                 var tracksRef = $(this).data("ref")
                 var id = $(this).data("id")
                 console.log("tracksRef: " + tracksRef)
 
-                
 
-    
-                $.get(tracksRef).then(function(results){
+
+
+                $.get(tracksRef).then(function (results) {
                     var trackResults = results.tracks
                     var tracksDiv = $("#albumTracks")
                     var album = $("<h2></h2>")
@@ -308,28 +311,31 @@ $(document).ready(function () {
                     album.appendTo(tracksDiv)
                     artist.appendTo(tracksDiv)
 
-                    for(var i =0; i< trackResults.length; i ++){
+                    for (var i = 0; i < trackResults.length; i++) {
                         console.log(trackResults[i].name)
 
                         var albumTracks = $("<div></div>")
                         var playButton = $("<button>Play Song!</button>")
                         var addButton = $("<button>Add to Playlist!</button>")
                         var ytRef = (trackResults[i].name + " by " + trackResults[i].artistName)
-        
+
                         playButton.attr("class", "btn btn-success playBtn")
                         playButton.attr("data-ref", ytRef)
-                        addButton.attr("class", "btn btn-success")
-                
+                        addButton.attr("class", "btn btn-success addBtn")
+                        addButton.attr("track", trackResults[i].name)
+                        addButton.attr("artist", trackResults[i].artistName)
+                        addButton.attr("album", trackResults[i].albumName)
+
                         var p = $("<p></p>")
 
-                        p.text((i+1) + ".) " + trackResults[i].name)
+                        p.text((i + 1) + ".) " + trackResults[i].name)
                         p.appendTo(albumTracks)
                         playButton.appendTo(albumTracks)
                         addButton.appendTo(albumTracks)
-                       
+
                         albumTracks.appendTo(tracksDiv)
                     }
-                    $(".playBtn").on("click", function(event){
+                    $(".playBtn").on("click", function (event) {
                         event.preventDefault()
                         var ytRef = $(this).data("ref")
                         console.log("playButton")
@@ -345,19 +351,19 @@ $(document).ready(function () {
         $("#albumResults").show()
     })
 
-function ytSearch(query){
-    var userSearch = query
-    var root = "https://www.youtube.com/embed/"
+    function ytSearch(query) {
+        var userSearch = query
+        var root = "https://www.youtube.com/embed/"
 
-    $.get(
-        "https://www.googleapis.com/youtube/v3/search", {
-            part: "snippet",
-            q: userSearch,
-            type: "video",
-            videoEmbeddable: true,
-            key: "AIzaSyCfYX18CUnQSumetnfx59uPgQN3400sTG8"
-        }, 
-            function(data){
+        $.get(
+            "https://www.googleapis.com/youtube/v3/search", {
+                part: "snippet",
+                q: userSearch,
+                type: "video",
+                videoEmbeddable: true,
+                key: "AIzaSyCfYX18CUnQSumetnfx59uPgQN3400sTG8"
+            },
+            function (data) {
                 $("#youtubeResults").empty()
                 for (var i = 0; i < 1; i++) {
                     var video = data.items[i];
@@ -367,12 +373,12 @@ function ytSearch(query){
                     $("#youtubeResults").append(`<iframe width="400" height="315" src=${url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
 
                 }
-             }
-    )
-    console.log(userSearch)
-    $("#youtubeModal").modal("show")
-    $("#albumModal").modal("hide")
-}
+            }
+        )
+        console.log(userSearch)
+        $("#youtubeModal").modal("show")
+        $("#albumModal").modal("hide")
+    }
 
 
 
