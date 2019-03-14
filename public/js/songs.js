@@ -8,15 +8,15 @@ $(document).ready(function(){
 
     $(document).on("click", ".addBtn", function(event){
       event.preventDefault();
-      var name=$(this).attr("track")
-      var artist=$(this).attr("artist")
-      var album=$(this).attr("album")
-      console.log(name)
-      console.log(artist)
-      console.log(album)
+      var artist=$(this).attr("artist");
+      var name=$(this).attr("track");
+      var album=$(this).attr("album");
+      console.log(name);
+      console.log(artist);
+      console.log(album);
       var song = {
         artist: artist,
-        name: name,
+        song_title: name,
         album: album
         // songUrl: songUrl
       };

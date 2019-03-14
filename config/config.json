@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "Greenlight*0908",
     "database": "lazy_boi",
     "host": "127.0.0.1",
     "dialect": "mysql"

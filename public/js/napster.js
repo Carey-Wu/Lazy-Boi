@@ -171,6 +171,9 @@ $(document).ready(function () {
                 title.text(tracks[i].name)
                 album.text("Album: " + tracks[i].albumName)
 
+                var buttonForm = $("<div></div>")
+                buttonForm.attr("class", "form")
+
                 var playButton = $("<button>Play Song!</button>")
                 var addButton = $("<button>Add to Playlist!</button>")
                 var ytRef = (tracks[i].name + " by " + tracks[i].artistName)
@@ -182,8 +185,10 @@ $(document).ready(function () {
                 title.appendTo(trackBody)
                 album.appendTo(trackBody)
 
-                playButton.appendTo(trackBody)
-                addButton.appendTo(trackBody)
+                buttonForm.appendTo(trackBody)
+
+                playButton.appendTo(buttonForm)
+                addButton.appendTo(buttonForm)
 
                 trackBody.appendTo(trackDiv)
                 trackDiv.appendTo($("#artistResults"))
