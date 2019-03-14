@@ -177,7 +177,7 @@ $(document).ready(function () {
 
                 playButton.attr("class", "btn btn-success playBtn")
                 playButton.attr("data-ref", ytRef)
-                addButton.attr("class", "btn btn-success")
+                addButton.attr("class", "btn btn-success addBtn")
 
                 title.appendTo(trackBody)
                 album.appendTo(trackBody)

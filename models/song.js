@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Song = sequelize.define("Songs", {
+    var Songs = sequelize.define("Songs", {
 
         artist: {
             type: DataTypes.STRING,
@@ -53,5 +53,5 @@ module.exports = function (sequelize, DataTypes) {
 
         
     });
-    return Song;
+    return Songs;
 };
