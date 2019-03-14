@@ -67,16 +67,25 @@
 									<i class="fa fa-music" aria-hidden="true"></i>
 									<span></span>
 								</div>
+							</li>
 							<li>
-								<i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+								<a href="/" id="signOut" style="color:whitesmoke"><i class="fas fa-sign-out-alt"
+										aria-hidden="true"></i></a>
 								<span></span>
 							</li>
+
+							<li>
+								<i id="currentUser"></i>
+								<span></span>
 							</li>
 						</ul>
 
 					</div>
 				</div>
-				
+				<br>
+				<br>
+				<br>
+
 				<!-- Start Lazyboi Feature Header -->
 				<div class="text-center">
 					<div class="text-center">
@@ -102,6 +111,9 @@
 
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
 	</header>
 	<!-- End Header -->
 	<!-- Start Search Music Content -->
@@ -266,7 +278,26 @@
 		</div>
 		</div>
 	</section>
-
+	<section id="mu-playlists">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mu-playlists-area">
+						<h2>Playlist</h2>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Title</th>
+									<th scope="col">Artist</th>
+									<th scope="col">Album</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Start Main Content -->
 	<main>
@@ -451,6 +482,16 @@
 		<script type="text/javascript" src="./js/custom.js"></script>
 		<script type="text/javascript" src="./js/napster.js"></script>
 		<script type="text/javascript" src="./js/songs.js"></script>
+		<script type="text/javascript" src="./js/logout.js"></script>
+		<script>
+			if (localStorage.getItem("name") === null) {
+				$("#currentUser").text("Not Signed In")
+			}
+			else {
+				$("#currentUser").text("Signed in as: " + localStorage.getItem("name"))
+			}
+
+		</script>
 		<!-- Initialize AOS JS Animations-->
 		<script>
 			AOS.init();

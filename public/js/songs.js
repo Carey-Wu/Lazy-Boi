@@ -24,7 +24,7 @@ $(document).ready(function () {
           album: album,
           UserId: data[i].id
         };
-        if (data[i].active === true) {
+        if (data[i].active === true && data[i].username === localStorage.getItem("name")) {
           $.post("/api/songs", song)
         }
         else {
@@ -32,6 +32,7 @@ $(document).ready(function () {
         }
       }
     })
+    window.location.reload();
   });
 
 
@@ -96,5 +97,28 @@ $(document).ready(function () {
 
     $.post("/api/songs", song, getSongs);
   }
+  $.get("/api/users", function (data) {
 
+    for (var i = 0; i < data.length; i++) {
+     
+      if (data[i].active === true && data[i].username === localStorage.getItem("name")) {
+      
+        var currentUser = data[i].id
+        console.log(currentUser)
+        $.get("api/songs", function (table) {
+          for (var i = 0; i < table.length; i++) {
+            console.log(table[i].UserId)
+            if (table[i].UserId===currentUser){
+              var name=table[i].song_title
+              var singer=table[i].artist
+              var record=table[i].album
+              var tbody=$("<tbody><tr><td>"+name+"</td><td>"+singer+"</td><td>"+record+"</td></tr>")
+              tbody.appendTo($(".table"))
+              
+            }
+          }
+        })
+      }
+    }
+  })
 })

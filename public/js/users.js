@@ -33,4 +33,6 @@ $(document).ready(function(){
             alert("New User Created. Please Login")        
         }
     })
+
+    
 })

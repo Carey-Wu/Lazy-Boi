@@ -9,6 +9,9 @@ $(document).ready(function () {
                 var activeUser = data[i]
                 console.log(activeUser);
                 if ($("#user").val().trim() === data[i].username && $("#pass").val().trim() === data[i].password) {
+                    var username = data[i].username;
+                    localStorage.clear();
+                    localStorage.setItem("name", username);
                     console.log("right");
                     toggleActive()
                 }
@@ -17,7 +20,7 @@ $(document).ready(function () {
                 }
             
                 function toggleActive() {
-                    if (activeUser.active = true){
+                    if (activeUser.active === true){
                         updateActive(activeUser);
                     }
                     else {
