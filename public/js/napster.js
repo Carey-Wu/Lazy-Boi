@@ -27,7 +27,7 @@ $(document).ready(function () {
         } else {
             console.log("no-space");
         }
-        searchURL = "http://api.napster.com/v2.2/search?";
+        searchURL = "https://api.napster.com/v2.2/search?";
         apiKey = "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
         napsterQuery = searchURL + apiKey + "&query=" + query + "&type=track&per_type_limit=5";
         console.log(napsterQuery);
@@ -120,7 +120,7 @@ $(document).ready(function () {
         } else {
             console.log("no-space");
         }
-        searchURL = "http://api.napster.com/v2.2/search?";
+        searchURL = "https://api.napster.com/v2.2/search?";
         apiKey = "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
         napsterQuery = searchURL + apiKey + "&query=" + query + "&type=artist&per_type_limit=1";
         console.log(napsterQuery);
@@ -224,7 +224,7 @@ $(document).ready(function () {
         } else {
             console.log("no-space");
         }
-        searchURL = "http://api.napster.com/v2.2/search?";
+        searchURL = "https://api.napster.com/v2.2/search?";
         apiKey = "apikey=MjM3OTI0OGMtZTVjOS00OTAwLTg4MDgtYjFjOWRkNmUxNWZi"
         napsterQuery = searchURL + apiKey + "&query=" + query + "&type=album&per_type_limit=5";
         console.log(napsterQuery);
