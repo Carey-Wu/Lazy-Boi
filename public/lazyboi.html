@@ -282,6 +282,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
+						<div data-aos="fade-up">
 					<div class="mu-playlists-area">
 						<h2>Playlist</h2>
 						<table class="table">
@@ -294,6 +295,7 @@
 							</thead>
 						</table>
 					</div>
+				</div>
 				</div>
 			</div>
 		</div>
@@ -488,8 +490,9 @@
 				$("#currentUser").text("Not Signed In")
 			}
 			else {
-				$("#currentUser").text("Signed in as: " + localStorage.getItem("name"))
+				$("#currentUser").text("Welcome! " + localStorage.getItem("name"))
 			}
+			
 
 		</script>
 		<!-- Initialize AOS JS Animations-->
