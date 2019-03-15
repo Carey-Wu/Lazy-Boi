@@ -10,8 +10,10 @@ $(document).ready(function () {
                 console.log(activeUser);
                 if ($("#user").val().trim() === data[i].username && $("#pass").val().trim() === data[i].password) {
                     var username = data[i].username;
+                    var userEmail = data[i].email;
                     localStorage.clear();
                     localStorage.setItem("name", username);
+                    localStorage.setItem("email", userEmail)
                     console.log("right");
                     toggleActive()
                 }
