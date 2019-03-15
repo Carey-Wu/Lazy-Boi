@@ -24,7 +24,7 @@ $(document).ready(function () {
           album: album,
           UserId: data[i].id
         };
-        if (data[i].active === true && data[i].username === localStorage.getItem("name")) {
+        if (data[i].active === true && data[i].username === localStorage.getItem("name") && data[i].email === localStorage.getItem("email")) {
           $.post("/api/songs", song)
         }
         else {

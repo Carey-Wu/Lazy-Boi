@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
                 function toggleActive() {
-                    if (activeUser.username === localStorage.getItem("name") && activeUser.active === true) {
+                    if (activeUser.username === localStorage.getItem("name") && activeUser.email === localStorage.getItem("email") && activeUser.active === true) {
                         activeUser.active = !activeUser.active;
                         updateActive(activeUser);
                     }
